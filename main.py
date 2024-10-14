@@ -10,14 +10,11 @@ from google.oauth2.credentials import Credentials
 from google.auth.transport.requests import Request
 import pickle
 
-# Load environment variables
 load_dotenv()
 
-# Set up YouTube API client
 api_key = os.getenv('YOUTUBE_API_KEY')
 youtube = build('youtube', 'v3', developerKey=api_key)
 
-# OAuth2 setup
 CLIENT_SECRETS_FILE = os.getenv('CLIENT_SECRETS_FILE')
 SCOPES = ['https://www.googleapis.com/auth/yt-analytics.readonly']
 API_SERVICE_NAME = 'youtubeAnalytics'
